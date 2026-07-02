@@ -1,0 +1,526 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Elements screen se baahar na jayein */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --bg:rgb(215, 179, 179);
+    --nav:rgba(255, 246, 246, 0.936);
+    --crad:rgb(157, 157, 157);
+    --button:rgb(255, 132, 0);
+    --font:rgb(0, 0, 128);
+}
+
+/* --- NAVIGATION --- */
+nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background-color: var(--nav);
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+nav li a{
+    color: var(--font);
+    text-decoration: none;
+}
+
+nav span{
+    color: var(--button);
+}
+
+nav button{
+   background-color: var(--button);
+   border: none;
+   padding: 10px 15px;
+   border-radius: 10px;
+   color: white;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+nav button:hover{
+    color: rgb(195, 193, 193);
+}
+
+nav li a:hover{
+    border-bottom: 3.5px solid var(--button);
+}
+
+/* --- HERO SECTION --- */
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(ch.webp);
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    padding: 40px 10% 80px 10%; /* Bottom padding thodi zyada di hai taaki floating div space le sake */
+    position: relative;
+}
+
+.content{
+    max-width: 500px;
+    color: white;
+}
+
+.content span{
+   color: var(--button);
+}
+
+.content h1{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.content p{
+   color: aliceblue;    
+   margin-bottom: 20px;
+}
+
+.btn1, .btn2 {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn1{
+    color: aliceblue;
+    background-color: var(--button);
+    border: none;
+}
+
+.btn2{
+    color: aliceblue;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+/* --- FLOATING DIV CENTER ALIGNMENT (FIXED) --- */
+.nwe-stuff{
+    background-color: white;
+    width: 90%;
+    max-width: 1170px;
+    
+    /* Perfect Center floating logic */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); 
+    
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    z-index: 10;
+}
+
+.al{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   gap: 20px;
+   width: 100%;
+}
+
+.al .items{
+  text-align: center;
+  padding: 10px;
+  flex: 1 1 200px; 
+}
+
+.al .items i {
+    display: block;
+    margin-bottom: 10px;
+    color: rgb(38, 8, 130);
+}
+
+/* --- IMAGES & STORY SECTION (FIXED MERGE ISSUE) --- */
+.cards{
+    padding: 100px 5% 40px 5%;  /* Top padding zyada di hai floating div ki wajah se */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dono big aur small images ka main container */
+.all-grid {
+    display: flex;
+    flex-direction: row; /* Badi screen par side-by-side dikhengi */
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-img{
+    background-image: url(big-img.webp);
+    background-position: center;
+    background-size: cover;
+    height: 320px;
+    width: 280px;
+    border-radius: 10px;
+    margin-right: 230px
+}
+
+/* Small images ka column container */
+.sm-all {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.sm-img-1, .sm-img-2, .sm-img-3 {
+    background-position: center;
+    background-size: cover;
+    height: 100px;
+    width: 140px;
+    border-radius: 10px;
+    margin-left: 300px;
+}
+.sm-img-1 { background-image: url(sm1.jfif); }
+.sm-img-2 { background-image: url(sm2.jfif); }
+.sm-img-3 { background-image: url(sm3.jfif); }
+
+.next{
+    flex: 1 1 350px;
+    max-width: 500px;
+    margin-right: 50px;
+}
+
+.next .h{
+    color: var(--button);
+    font-weight: bold;
+}
+
+.next button{
+    background-color: var(--button);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.next p{
+    color: var(--font);
+}
+
+/* Timeline Components */
+.line{
+    background: linear-gradient(45deg, #ff9500 0%, #e6b54c 50%, #ffea00 100%);
+    height: 250px;
+    width: 5px;
+}
+
+.dates{
+   color: var(--font);
+   text-align: center;
+}
+
+/* --- INITIATIVES (WHAT WE DO) --- */
+.cam{
+    padding: 60px 5%;
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.head{
+    text-align: center;
+    width: 100%;
+}
+
+.head h1{
+    color: var(--font);
+    font-weight: bold;
+}
+
+.cam-all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.camm{
+   height: auto;
+   min-height: 220px;
+   width: 250px;
+   border-radius: 12px; 
+   padding: 20px;  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   transition: 0.3s;
+}
+
+.camm i {
+    margin-bottom: 15px;
+}
+
+.camm:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+/* Background Alag colors ke liye */
+#blue { background-color: rgba(0, 47, 255, 0.1);}
+#green { background-color: rgba(0, 255, 38, 0.1); }
+#red { background-color: rgba(255, 0, 0, 0.1); }
+#pink { background-color: rgba(255, 0, 0, 0.1); }
+#yellow { background-color: rgba(238, 255, 0, 0.1); }
+#purple { background-color: rgba(191, 0, 255, 0.1); }
+
+/* --- GALLERY --- */
+.photo{
+    padding: 20px 5%;
+}
+
+.top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top h1{
+    color: var(--font);
+}
+
+.top p{
+    color: var(--button);
+    font-weight: bold;
+}
+
+.top button{
+    padding: 10px 20px;
+    background-color: var(--font);
+    color: aliceblue;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.photo-frame {
+    padding: 20px 5%;
+}
+
+.f{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.frame{
+    height: 150px;
+    width: 220px;
+    border-radius: 12px;
+}
+#f1{ background-image: url(frame1.webp); background-position: center; background-size: cover; }
+#f2{ background-image: url(frame2.jpg); background-position: center; background-size: cover; }
+#f3{ background-image: url(frame3.jfif); background-position: center; background-size: cover; }
+#f4{ background-image: url(frame4.jpg); background-position: center; background-size: cover; }
+#f5{ background-image: url(frame5.png); background-position: center; background-size: cover; }
+
+/* --- BANNER --------------------------------------------------------------------------- --- */
+.break {
+    width: 100%;
+}
+
+.b{
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(bb.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.b h1 {
+    font-size: 2rem;
+}
+
+.b p {
+    margin: 15px 0;
+}
+
+/* --- CONTACT FORM --- */
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: whitesmoke;
+}
+
+.last{
+    width: 100%;
+    max-width: 400px;
+}
+
+.last form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.last input, .last textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+.last textarea{
+    height: 100px;
+    margin-top: 10px;
+}
+
+.last button{
+    color: white;
+    background-color: var(--font);
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* --- FOOTER --- */
+footer{
+    background-color: var(--font);
+    height: 60px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+}
+.head h4{
+    color: var(--button);
+}
+.next{
+        text-align: start;
+}
+
+
+@media(max-width: 768px){
+    /* Navbar mobile layout */
+    .next{
+        margin-top: 130px;
+        text-align: center;
+        margin-left: 50px;
+    }
+    nav ul {
+        display: none; 
+    }
+    
+    .home {
+        min-height: 450px;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 120px; /* Mobile par card thoda aur lamba ho sakta hai */
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    /* Mobile par images ek ke neeche ek aayengi bina merge hue */
+    .all-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sm-all {
+       display: none;
+    }
+    
+    /* Timeline hidden on mobile */
+    .line, .dates {
+        display: none;
+    }
+    .big-img{
+        display: none;
+    }
+    .top {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .content button{
+        margin-bottom: 100px;
+        padding: 10px;
+    }
+}
+
+.fa-book-open{
+    margin-top: 20px;
+}
+.fa-person-dress{
+    margin: 20px;
+}
+
+.fa-paw{
+    margin: 20px;
+
+}
+
+.next button a{
+    text-decoration: none;
+    color: white;
+}
+
+.photo button a{
+    text-decoration: none;
+    color: white;
+}
+
+nav button a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn2  a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn1  a{
+    text-decoration: none;
+    color: white;
+}
